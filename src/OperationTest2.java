@@ -1,4 +1,3 @@
-package javabasic;
 import java.util.*;
 
 public class OperationTest2 {

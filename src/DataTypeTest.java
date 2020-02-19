@@ -1,5 +1,3 @@
-package javabasic;
-
 public class DataTypeTest {
 	public static void main(String[] args) {
 		//boolean

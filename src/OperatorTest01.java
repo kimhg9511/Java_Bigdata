@@ -1,5 +1,3 @@
-package javabasic;
-
 public class OperatorTest01 {
 	/**
 	 * 산술 연산자 테스트

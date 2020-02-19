@@ -1,5 +1,3 @@
-package javabasic;
-
 public class StringCastTest {
 
 	public static void main(String[] args) {

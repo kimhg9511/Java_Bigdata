@@ -1,5 +1,3 @@
-package javabasic;
-
 public class VarChangeTest {
 
 	public static void main(String[] args) {
