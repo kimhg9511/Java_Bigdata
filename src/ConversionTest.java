@@ -14,7 +14,7 @@ public class ConversionTest {
 		int var_int2 = 100;
 		byte var_byte2 = (byte)var_int2;
 		
-		//char�� short
+		//char와 short
 		short var_short1 = 200;
 		char var_char1 = (char)var_short1;
 		System.out.println("var_char1 = " + var_char1);
