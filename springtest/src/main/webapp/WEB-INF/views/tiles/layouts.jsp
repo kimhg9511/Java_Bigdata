@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 <tiles:insertAttribute name="css"/>
-<tiles:insertAttribute name="header"/>
-<tiles:insertAttribute name="menu"/>
-<tiles:insertAttribute name="content"/>
-<tiles:insertAttribute name="footer"/>
 <tiles:insertAttribute name="js"/>
+<tiles:insertAttribute name="header"/>
+<tiles:insertAttribute name="footer"/>
+<tiles:insertAttribute name="content"/>
+<tiles:insertAttribute name="menu"/>
 
 <html>
 
