@@ -33,9 +33,8 @@ public class FlowTest9 {
 		//com = (int)Math.round(Math.random() * 3 + 0.5);
 		com = (int)(Math.random()*3) + 1; 
 		sCom = comItoS(com); //컴퓨터의 값을 문자열로 변환
-		
 		match = matching(user,com); //승부 결정
-		
+
 		//출력
 		System.out.printf("나 : %s(%s) / 컴퓨터 : %s(%s) , %s %n", sUser,user, sCom,com, match);
 	}
@@ -73,7 +72,8 @@ public class FlowTest9 {
 		return sCom;
 	}
 	static String matching(int user,int com) { //승부 결정
-		String match = "";
+	
+	String match = "";
 		if(user-com == 0) {
 			match = "비겼습니다.";
 		} else if(user-com == 1 || user-com == -2) {
