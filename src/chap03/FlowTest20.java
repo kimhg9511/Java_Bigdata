@@ -87,10 +87,27 @@ public class FlowTest20 {
 					System.out.printf("(%d, %d)",x,y);
 			}
 		}
+		System.out.println("");
+		// 1~100 2,3,5,7의 배수를 제외한 수를 한 행에 10개씩 출력하는 프로그램
+		int count=0;
+
+		for(int i=1;i<=100;i++) {
+			if(!(i%2==0 || i%3==0 || i%5==0 || i%7==0)) {
+				System.out.printf("%2d ",i);
+				count++;
+				//System.out.println(count);
+			}
+			if(count%10 == 0 && count != 0) {
+				System.out.println("");
+				count = 0;
+			}
+		}
+
 	}
-
-
-
-
 }
+
+
+
+
+
 

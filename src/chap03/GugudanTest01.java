@@ -11,10 +11,10 @@ public class GugudanTest01 {
 		// TODO Auto-generated method stub
 		int dan = 0;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("보고싶은 단의 수를 입력하세요.(0: 전부)>>");
-		if(sc.hasNextInt()) {
-			dan = sc.nextInt();
-		}
+			System.out.print("보고싶은 단의 수를 입력하세요.(0: 전부)>>");
+			if(sc.hasNextInt()) {
+				dan = sc.nextInt();
+			}
 		if(dan == 0) { // 전부 출력
 			//구분선
 			for(int i=0;i<95;i++)
@@ -41,18 +41,18 @@ public class GugudanTest01 {
 			System.out.println("");
 		}
 		else { //원하는 단만 출력
-				//구분선
-				for(int i=0;i<10;i++)
-					System.out.print("=");
-				System.out.println("");
-				//구구단
-				for(int i=1;i<=9;i++) {
-					System.out.printf("%d x %d = %2d%n",dan, i, dan*i);
-				}
-				//구분선
-				for(int i=0;i<10;i++)
-					System.out.print("=");
-				System.out.println("");
+			//구분선
+			for(int i=0;i<10;i++)
+				System.out.print("=");
+			System.out.println("");
+			//구구단
+			for(int i=1;i<=9;i++) {
+				System.out.printf("%d x %d = %2d%n",dan, i, dan*i);
+			}
+			//구분선
+			for(int i=0;i<10;i++)
+				System.out.print("=");
+			System.out.println("");
 		}
 	}
 }
