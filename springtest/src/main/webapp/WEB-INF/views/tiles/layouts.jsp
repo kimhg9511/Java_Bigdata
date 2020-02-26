@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 
 
+<tiles:insertAttribute name="js"/>
+<tiles:insertAttribute name="header"/>
 
 <tiles:insertAttribute name="content"/>
 <tiles:insertAttribute name="menu"/>
@@ -14,7 +16,7 @@
 </head>
 
 <body id="page-top">
-		<tiles:insertAttribute name="header" />
+
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -644,7 +646,22 @@
     </div>
   </div>
 
-  <tiles:insertAttribute name="js"/>
+  <!-- Bootstrap core JavaScript-->
+  <script src="/resources/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/resources/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/resources/assets/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/resources/assets/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/resources/assets/js/demo/chart-area-demo.js"></script>
+  <script src="/resources/assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
