@@ -1,4 +1,4 @@
-package chap03;
+package NumBase;
 
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class NumBase2 {
 			ntoDigit(comNum,cNum);
 			//System.out.println(comNum);
 		} while(cNum[2] == cNum[1] || cNum[2] == cNum[0] || cNum[1] == cNum[0] || comNum < 100);
-		
+
 		//유저가 수를 맞추는 과정
 		while(comNum != userNum) {
 			//유저에게서 숫자를 입력받음
@@ -31,13 +31,13 @@ public class NumBase2 {
 			//sc.nextLine();
 			//유저가 입력한 숫자를 자릿수별로 가공
 			ntoDigit(userNum,uNum);
-			
+
 			//S, B 판별
 			int sCount = 0;
 			int bCount = 0;
 			sCount = judgeS(uNum,cNum);
 			bCount = judgeB(uNum,cNum);
-			
+
 			//정답판별
 			if(sCount==0&&bCount==0) {System.out.println("OUT!");}
 			else if(sCount == 3) {break;}
@@ -49,19 +49,15 @@ public class NumBase2 {
 	}
 	static int judgeB(int uNum[],int cNum[]) {
 		int bCount = 0;
-		//자릿수와 숫자를 카운트
-		if(cNum[2] == uNum[1] || cNum[2] == uNum[0]) {bCount++;}
-		if(cNum[1] == uNum[0] || cNum[1] == uNum[2]) {bCount++;}
-		if(cNum[0] == uNum[1] || cNum[0] == uNum[2]) {bCount++;}
+		for(int i=0;i<3;i++)
+			if(cNum[i] == uNum[(i+1)%3] || cNum[i] == uNum[(i+2)%3]) {bCount++;}
 		//System.out.println("B : " + bCount);
 		return bCount;
 	}
 	static int judgeS(int uNum[],int cNum[]) {
 		int sCount = 0;
-		//자릿수와 숫자를 카운트
-		if(cNum[2] == uNum[2]) {sCount++;}
-		if(cNum[1] == uNum[1]) {sCount++;}
-		if(cNum[0] == uNum[0]) {sCount++;}
+		for(int i=0;i<3;i++)
+			if(cNum[i] == uNum[i]) {sCount++;}
 		//System.out.println("S : " + sCount);
 		return sCount;
 	}
@@ -74,7 +70,7 @@ public class NumBase2 {
 		}
 	}
 	static void comSol(int num) {
-		
+
 	}
 }
 

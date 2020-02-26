@@ -1,4 +1,4 @@
-package chap03;
+package NumBase;
 
 import java.util.Scanner;
 
@@ -10,6 +10,7 @@ public class NumBase {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		// TODO Auto-generated method stub
 		int userNum = 0;
 		int comNum = 0;

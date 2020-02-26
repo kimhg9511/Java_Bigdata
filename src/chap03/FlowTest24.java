@@ -27,7 +27,7 @@ public class FlowTest24 {
 		//피보나치 수열의 10번째 숫자
 		double n1 = 1;
 		double n2 = 1;
-		for(int i1=3;i1<=1000;i1++) {
+		for(int i1=3;i1<=100;i1++) {
 			n2 = n2 + n1;
 			n1 = n2 - n1;
 			System.out.println("n2 : " + n2);
