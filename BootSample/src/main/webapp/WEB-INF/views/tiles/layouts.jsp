@@ -28,7 +28,7 @@
 	</div>
 	<!-- /.content-wrapper -->
 
-	<!--/div>
+	</div>
 	<!-- /#wrapper -->
 
 	<!-- Scroll to Top Button-->
