@@ -10,9 +10,9 @@ public class NumBase_Proto {
 		int com2 = 3;
 		int com3 = 4;
 		//user(Scanner)
-		int user1 = 3;
-		int user2 = 5;
-		int user3 = 4;
+		int user1 = 3;			// com: 9	3	4
+		int user2 = 5;			// user:3	
+		int user3 = 4;			// S : 1 B : 1 O : 1
 		//S, B, O
 		int strike=0, ball=0, out=0;
 		//판별

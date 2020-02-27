@@ -25,7 +25,7 @@ public class NumBase_comuser {
 			com3 = (int)(Math.random()*9)+1;
 			
 			if(!(com1 == com2 || com2 == com3 || com3 == com1)) break;
-		}
+		} //-> 자릿수끼리 수가 중복되지 않는 3자리수를 컴퓨터가 만들어준다.
 		//user(Scanner)
 		Scanner sc = new Scanner(System.in);
 		int user1 = 0;
@@ -36,7 +36,7 @@ public class NumBase_comuser {
 		//실행 테스트를 위하여 컴퓨터값 출력
 		System.out.printf("%s %s %s %n",com1,com2,com3);
 		//판별
-		while(strike != 3) {
+		while(true) {
 			System.out.println("첫번째 숫자를 입력하세요.(0~9)>> ");
 			user1 = sc.nextInt();
 			System.out.println("두번째 숫자를 입력하세요.(0~9)>> ");

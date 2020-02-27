@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class DashBoardController {
+	
 	@RequestMapping(value="/")
 	public ModelAndView DashBoardView(ModelAndView mv) throws Exception{
 		mv.setViewName("dashBoard/dashBoard.tiles");
