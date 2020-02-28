@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 	
 <ul class="sidebar navbar-nav">
-	<li class="nav-item active"><a class="nav-link" href="/"> <i class="fas fa-fw fa-tachometer-alt"></i>
+	<li class="nav-item active"><a class="nav-link" href="/sbadmin"> <i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Dashboard</span>
 	</a></li>
 	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"

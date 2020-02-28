@@ -51,7 +51,7 @@
                 </label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="/">Login</a>
+            <a class="btn btn-primary btn-block" href="/sbadmin">Login</a>
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="register.html">Register an Account</a>
