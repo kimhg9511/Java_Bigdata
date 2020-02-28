@@ -31,7 +31,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="/">Start Bootstrap</a>
+      <a class="navbar-brand mr-1" href="/sbadmin">Start Bootstrap</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -95,7 +95,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/">
+          <a class="nav-link" href="/sbadmin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
@@ -135,7 +135,7 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="/">Dashboard</a>
+              <a href="/sbadmin">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Blank Page</li>
           </ol>

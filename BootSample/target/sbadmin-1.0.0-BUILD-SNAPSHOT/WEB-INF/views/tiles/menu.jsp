@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 	
 <ul class="sidebar navbar-nav">
-	<li class="nav-item active"><a class="nav-link" href="/"> <i class="fas fa-fw fa-tachometer-alt"></i>
+	<li class="nav-item active"><a class="nav-link" href="/sbadmin"> <i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Dashboard</span>
 	</a></li>
 	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
@@ -17,7 +17,7 @@
 				class="dropdown-item" href="forgot-password">Forgot Password</a>
 			<div class="dropdown-divider"></div>
 			<h6 class="dropdown-header">Other Pages:</h6>
-			<a class="dropdown-item" href="pages/404">404 Page</a> <a
+			<a class="dropdown-item" href="404">404 Page</a> <a
 				class="dropdown-item" href="blank">Blank Page</a>
 		</div></li>
 	<li class="nav-item"><a class="nav-link" href="charts"> <i

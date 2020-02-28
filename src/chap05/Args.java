@@ -12,7 +12,8 @@ public class Args {
 		arg.x = arg.x + 40;
 		
 	}
-	
+	//arg(main) : chap05.Args@79698539
+	//arg(func) : chap05.Args@79698539
 	void add(int[] arr) {
 		arr[0]++;
 	}
@@ -21,4 +22,6 @@ public class Args {
 		arg = new Args();
 		System.out.println("arg address(func) = " + arg);
 	}
+	//arg(main) : chap05.Args@79698539
+	//arg(func) : chap05.Args@79698539 -> chap05.Args@73f792cf
 }

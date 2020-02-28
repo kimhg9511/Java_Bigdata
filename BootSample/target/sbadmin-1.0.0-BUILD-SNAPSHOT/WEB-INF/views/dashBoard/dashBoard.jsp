@@ -91,7 +91,8 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" style="width:100%">
+				<table class="table table-bordered" id="dataTable"
+					style="width: 100%">
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -576,3 +577,4 @@
 		<div class="card-footer small text-muted">Updated yesterday at
 			11:59 PM</div>
 	</div>
+</div>

@@ -17,7 +17,7 @@
 				class="dropdown-item" href="forgot-password">Forgot Password</a>
 			<div class="dropdown-divider"></div>
 			<h6 class="dropdown-header">Other Pages:</h6>
-			<a class="dropdown-item" href="pages/404">404 Page</a> <a
+			<a class="dropdown-item" href="404">404 Page</a> <a
 				class="dropdown-item" href="blank">Blank Page</a>
 		</div></li>
 	<li class="nav-item"><a class="nav-link" href="charts"> <i
