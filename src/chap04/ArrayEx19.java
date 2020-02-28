@@ -21,6 +21,7 @@ public class ArrayEx19 {
 		int sum = 0;
 		int avg = 0;
 		double allAvg = 0;
+		int allSum = 0;
 		System.out.printf("번호\t 국어\t 영어\t 수학\t 총점\t 평균%n");
 		System.out.println("============================================");
 		for(int i=0;i<score.length;i++) {
@@ -33,13 +34,14 @@ public class ArrayEx19 {
 			korTotal += score[i][0];
 			engTotal += score[i][1];
 			mathTotal += score[i][2];
+			allSum += avg;
 		}
 		korAvg = korTotal/score.length;
 		engAvg = engTotal/score.length;
 		mathAvg = mathTotal/score.length;
-		allAvg = (double)(korAvg + engAvg + mathAvg)/3;
-		System.out.printf("과목총점\t %3d\t %3d\t %3d\t 반평균\t %.2f%n",korTotal,engTotal,mathTotal,allAvg);
-		System.out.printf("과목평균\t %3d\t %3d\t %3d%n",korAvg,engAvg,mathAvg);
+		allAvg = (double)(allSum)/score.length;
+		System.out.printf("과목총점\t %3d\t %3d\t %3d\t 반총점\t %3d\t%n",korTotal,engTotal,mathTotal,allSum);
+		System.out.printf("과목평균\t %3d\t %3d\t %3d\t 반평균\t %2.1f\t%n",korAvg,engAvg,mathAvg,allAvg);
 	}
 
 }
