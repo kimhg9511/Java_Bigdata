@@ -8,7 +8,7 @@ public class Args {
 	} 
 	 
 	void add(Args arg) {
-		System.out.println("arg address(func) = " + arg);
+		System.out.println("arg(func) address = " + arg);
 		arg.x = arg.x + 40;
 		
 	}
@@ -20,7 +20,7 @@ public class Args {
 	
 	void addNew(Args arg) {
 		arg = new Args();
-		System.out.println("arg address(func) = " + arg);
+		System.out.println("arg(func) address = " + arg);
 	}
 	//arg(main) : chap05.Args@79698539
 	//arg(func) : chap05.Args@79698539 -> chap05.Args@73f792cf
