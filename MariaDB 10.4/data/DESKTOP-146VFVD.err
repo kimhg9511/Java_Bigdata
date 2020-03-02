@@ -29,3 +29,4 @@ Version: '10.4.12-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribut
 2020-02-27 18:24:24 13 [Warning] Aborted connection 13 to db: 'unconnected' user: 'unauthenticated' host: 'localhost' (This connection closed normally without authentication)
 2020-02-27 18:35:36 15 [Warning] Aborted connection 15 to db: 'unconnected' user: 'root' host: 'localhost' (Got an error reading communication packets)
 2020-02-28 11:14:36 17 [Warning] Aborted connection 17 to db: 'unconnected' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2020-02-28 18:24:00 18 [Warning] Aborted connection 18 to db: 'mysql' user: 'root' host: 'localhost' (Got an error reading communication packets)

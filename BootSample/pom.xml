@@ -140,7 +140,7 @@
 			<version>3.2.8</version>
 		</dependency>
 		<!-- myBatis end -->
-		
+
 		<!-- myBatis-spring : DB -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -164,6 +164,13 @@
 			<version>2.4.4</version>
 		</dependency>
 		<!-- MariaDB end -->
+		<!-- test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- test end -->
 	</dependencies>
 	<build>
 		<plugins>
