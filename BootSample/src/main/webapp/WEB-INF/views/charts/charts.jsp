@@ -107,22 +107,22 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Login Screens:</h6>
-            <a class="dropdown-item" href="login.html">Login</a>
-            <a class="dropdown-item" href="register.html">Register</a>
-            <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+            <a class="dropdown-item" href="login">Login</a>
+            <a class="dropdown-item" href="register">Register</a>
+            <a class="dropdown-item" href="forgot-password">Forgot Password</a>
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Other Pages:</h6>
-            <a class="dropdown-item" href="404.html">404 Page</a>
-            <a class="dropdown-item" href="blank.html">Blank Page</a>
+            <a class="dropdown-item" href="404">404 Page</a>
+            <a class="dropdown-item" href="blank">Blank Page</a>
           </div>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="charts">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="tables">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
         </li>
@@ -216,7 +216,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="login">Logout</a>
           </div>
         </div>
       </div>
