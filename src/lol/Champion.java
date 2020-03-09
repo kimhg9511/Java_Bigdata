@@ -1,0 +1,25 @@
+package lol;
+
+public class Champion implements Role, Lane {
+	String champName;
+	double ad;
+	double ap;
+	double hp;
+	double def;
+	double reg;
+	int range;
+	int speed;
+
+	@Override
+	public String toString() {
+		return "Champion %n"
+				+ "champName = " + champName 
+				+ "%nad = " + ad 
+				+ "%nap = " + ap 
+				+ "%nhp = " + hp 
+				+ "%ndef = " + def
+				+ "%nreg = " + reg 
+				+ "%nrange = " + range 
+				+ "%nspeed = " + speed;
+	}
+}
