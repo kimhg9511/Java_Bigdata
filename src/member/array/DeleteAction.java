@@ -9,9 +9,7 @@ public class DeleteAction implements Action {
 		System.out.println("삭제할 회원의 이름을 넣으시오");
 		System.out.println("이름 : ");
 		String name = sc.next();
-
 		deleteMember(name);
-
 	}
 
 	private void deleteMember(String name) {

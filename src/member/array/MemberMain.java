@@ -9,12 +9,14 @@ public class MemberMain {
 	 * @param args
 	 */
 	static MemberVO[] members;// 회원정보 저장
+	
 	public static void main(String[] args) {
+		//선언부
 		MemberService ms = new MemberService();
 		Scanner sc = new Scanner(System.in);
 		members = new MemberVO[0];
 		boolean isStop = false;
-
+		//메뉴구현
 		do {
 			System.out.println("메뉴 선택");
 			System.out.println("============");
@@ -40,6 +42,8 @@ public class MemberMain {
 				ms.process(action, sc);
 				break;
 			case "4":
+				action = new UpdateAction();
+				ms.process(action, sc);
 				break;
 			case "5":
 				isStop = true;
@@ -48,6 +52,6 @@ public class MemberMain {
 				System.out.println("유효한 값을 입력하세요.");
 			}
 		} while (!isStop);
-		System.out.println(Arrays.toString(members));
+		//System.out.println(Arrays.toString(members));
 	}
 }
