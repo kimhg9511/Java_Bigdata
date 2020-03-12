@@ -1,18 +1,21 @@
 //MemberMain.java
-package member.array;
+package member.arraylist;
 
-import java.util.Arrays;
+//import java.util.Arrays;	***
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class MemberMain {
-
-    static MemberVO[] members;// 회원정보를 저장할 객체배열 members[] 생성
+	
+    //static MemberVO[] members;// 회원정보를 저장할 객체배열 members[] 생성 ***
+	static ArrayList<MemberVO> members; // 회원정보를 저장할 ArrayList members 생성
 
     public static void main(String[] args) {
         //선언부
         MemberService ms = new MemberService();
         Scanner sc = new Scanner(System.in);
-        members = new MemberVO[0];
+        //members = new MemberVO[0]; ***
+        members = new ArrayList<MemberVO>();
+        
         boolean isStop = false;
         //메뉴구현
         do {
@@ -50,6 +53,5 @@ public class MemberMain {
                 System.out.println("유효한 값을 입력하세요.");
             }
         } while (!isStop);
-        //System.out.println(Arrays.toString(members));
     }
 }

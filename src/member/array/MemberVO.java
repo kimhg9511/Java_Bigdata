@@ -1,69 +1,71 @@
+//MemberVO.java
 package member.array;
 
-public class MemberVO {
-	private int age;
-	private String name;
-	private String tel;
-	private String email;
-	private String nation;
+public class MemberVO {        // Value Object 정의
+    // 속성
+    private int age;
+    private String name;
+    private String tel;
+    private String email;
+    private String nation;
+    // 생성자
+    public MemberVO() {
+        // TODO Auto-generated constructor stub
+    }
 
-	public MemberVO() {
-		// TODO Auto-generated constructor stub
-	}
+    public MemberVO(int age, String name, String tel, String email, String nation) {
+        this.age = age;
+        this.name = name;
+        this.tel = tel;
+        this.email = email;
+        this.nation = nation;
+    }
+    // getter(), setter()
+    public int getAge() {
+        return age;
+    }
 
-	public MemberVO(int age, String name, String tel, String email, String nation) {
-		this.age = age;
-		this.name = name;
-		this.tel = tel;
-		this.email = email;
-		this.nation = nation;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getTel() {
+        return tel;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
-	public String getTel() {
-		return tel;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getNation() {
+        return nation;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+    //toString()
+    @Override
+    public String toString() {
+        return "MemberVO [age=" + age + ", name=" + name + ", tel=" + tel + ", email=" + email + ", nation=" + nation
+                + "]";
+    }
 
-	public String getNation() {
-		return nation;
-	}
 
-	public void setNation(String nation) {
-		this.nation = nation;
-	}
-
-	@Override
-	public String toString() {
-		return "MemberVO [age=" + age + ", name=" + name + ", tel=" + tel + ", email=" + email + ", nation=" + nation
-				+ "]";
-	}
-	
-	
 }

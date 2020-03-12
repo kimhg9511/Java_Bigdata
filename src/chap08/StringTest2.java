@@ -8,7 +8,7 @@ public class StringTest2 {
 		System.out.println("원본 문자열 : " + source1);
 		//charAt
 		System.out.println("첫 번째 문자 : source1.charAt(0) : " + source1.charAt(0));
-		System.out.println("네 번째 문자 : source1.charAt(0) : " + source1.charAt(3));
+		System.out.println("네 번째 문자 : source1.charAt(3) : " + source1.charAt(3));
 		//indexOf
 		System.out.println("aaa 문자열의 인덱스 : source1.indexOf(\"aaa\") : " + source1.indexOf("aaa"));
 		System.out.println("aaa 문자열의 뒤에서부터 검색한 위치 : source1.lastIndexOf(\"aaa\") : " + source1.lastIndexOf("aaa"));
