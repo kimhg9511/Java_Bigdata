@@ -1,6 +1,10 @@
+# List(Collection) 개요
 
 
 
+
+
+# MemberMain.java 수정
 
 ```java
 //MemberMain.java
@@ -64,7 +68,7 @@ public class MemberMain {
 
 
 
-
+# AddAction.java 수정
 
 ```java
 //AddAction.java
@@ -111,7 +115,7 @@ public class AddAction implements Action{	//1.회원 가입
 
 
 
-
+# ListAction.java 수정
 
 ```java
 //ListAction.java
@@ -154,7 +158,7 @@ public class ListAction implements Action {//2.회원 정보 보기
 
 
 
-
+# DeleteAction.java 수정
 
 ```java
 //DeleteAction.java
@@ -228,10 +232,10 @@ public class DeleteAction implements Action {	// 3.회원 삭제
 
 
 
-
+# UpdateAction.java 수정
 
 ```java
-//UpdateMember.java
+//UpdateAction.java
 package member.arraylist;
 
 import java.util.ArrayList;
