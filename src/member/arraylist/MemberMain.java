@@ -15,7 +15,6 @@ public class MemberMain {
         Scanner sc = new Scanner(System.in);
         //members = new MemberVO[0]; ***
         members = new ArrayList<MemberVO>();
-        
         boolean isStop = false;
         //메뉴구현
         do {

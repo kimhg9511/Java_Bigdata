@@ -1,18 +1,14 @@
 //MemberMain.java
-package member.array;
+package member.file;
 
-//import java.util.Arrays;
 import java.util.Scanner;
 
 public class MemberMain {
-
-    static MemberVO[] members;// 회원정보를 저장할 객체배열 members[] 생성
-
+	
     public static void main(String[] args) {
         //선언부
         MemberService ms = new MemberService();
         Scanner sc = new Scanner(System.in);
-        members = new MemberVO[0];
         boolean isStop = false;
         //메뉴구현
         do {
@@ -20,9 +16,8 @@ public class MemberMain {
             System.out.println("============");
             System.out.println("1.회원 가입");
             System.out.println("2.회원 목록 보기");
-            System.out.println("3.회원 삭제");
-            System.out.println("4.회원 정보 수정");
-            System.out.println("5.종료");
+            System.out.println("3.회원 검색");
+            System.out.println("4.종료");
             System.out.println("============");
             String command = sc.next();
             Action action = null;
@@ -36,20 +31,15 @@ public class MemberMain {
                 ms.process(action, sc);
                 break;
             case "3":
-                action = new DeleteAction();
+                action = new SearchAction();
                 ms.process(action, sc);
                 break;
             case "4":
-                action = new UpdateAction();
-                ms.process(action, sc);
-                break;
-            case "5":
                 isStop = true;
                 break;
             default:
                 System.out.println("유효한 값을 입력하세요.");
             }
         } while (!isStop);
-        //System.out.println(Arrays.toString(members));
     }
 }
