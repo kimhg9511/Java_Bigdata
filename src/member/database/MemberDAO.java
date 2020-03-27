@@ -7,13 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MemberDAO {
+//singleton
 	//Instance
 	private static MemberDAO dao = new MemberDAO();
 	//private constructor
 	private MemberDAO() {
 		System.out.println("Singleton DAO created.");
 	}
-	
+	//return singleton object
 	public static MemberDAO getInstance() {
 		return dao;
 	}
@@ -155,7 +156,8 @@ public class MemberDAO {
 
 	}
 
-	void deleteMember(int idx) {
+	int deleteMember(int idx) {
+		int isDelete = 0;
 		try {
 			conn = JdbcUtil.getConnection();
 			System.out.println("connection ok");
@@ -163,7 +165,7 @@ public class MemberDAO {
 			pstmt = conn.prepareStatement(MEMBER_DELETE);
 			pstmt.setInt(1, idx);
 
-			pstmt.executeUpdate();
+			isDelete = pstmt.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -174,9 +176,8 @@ public class MemberDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-
 		}
-
+		return isDelete;
 	}
 
 	ArrayList<MemberVO> searchMember(String sName) {
