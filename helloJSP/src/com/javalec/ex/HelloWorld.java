@@ -1,4 +1,4 @@
-package com.javalex.ex;
+package com.javalec.ex;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

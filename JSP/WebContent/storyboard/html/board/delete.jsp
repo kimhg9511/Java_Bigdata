@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/title-icon.png" type="image/x-icon">
+    <title>게시글 삭제</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/board.css">
+</head>
+<body>
+    <div class="delete center">
+        <h1>작성자의 비밀번호를 입력해주세요</h1>
+        <input id="upw" type="password">
+        <div class="button del">
+            <input type="button" id="delete" value="삭제완료">
+            <input type="button" value="뒤로" onclick="location.href='list.jsp'">
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="../../js/board.js"></script>
+</body>
+</html>
