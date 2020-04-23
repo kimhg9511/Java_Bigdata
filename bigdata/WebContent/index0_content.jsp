@@ -12,11 +12,11 @@
 				<th>조 회</th>
 			</tr>
 			<%
-				for (int i = 10; i > 0; i--) {
+				for (int i = 15; i > 0; i--) {
 			%>
 			<tr>
 				<td><%=i%></td>
-				<td class="table-contents"><a href="board/list.jsp">게시판
+				<td class="table-contents"><a href="/bigdata/board/list.jsp">게시판
 						글입니다 <%=i%></a></td>
 				<td>김현겸</td>
 				<td>2020/04/16</td>
@@ -37,11 +37,7 @@
 		</table>
 		<div class="button">
 			<input type="button" value="글쓰기"
-				onclick="location.href = 'login/login.jsp'">
+				onclick="location.href = '/bigdata/login/login.jsp'">
 		</div>
 	</div>
-
-	<%-- footer --%>
-	<%@ include file="footer.jsp"%>
-	<%-- footer end. --%>
 </div>

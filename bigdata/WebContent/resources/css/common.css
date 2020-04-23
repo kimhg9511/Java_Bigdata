@@ -1,0 +1,242 @@
+@font-face{
+    font-family: 'NanumGothic';
+    src: url("../img/NanumGothicCoding.ttf") format("truetype");
+}
+@font-face{
+    font-family: 'NanumBrush';
+    src: url("../img/NanumBrush.ttf") format("truetype");
+}
+/* element */
+*{
+    font-family: NanumGothic;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+}
+html{
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+html:after{
+    background-image: url('../img/bg-skyblue.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5!important;
+    filter:alpha(opacity=50);
+    content:"";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+input:focus{
+    outline: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+li {
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    font-family: "NanumBrush";
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    padding: 5px;
+    margin-bottom: 30px;
+  
+}
+h2{
+    font-size: 1.3em;
+}
+/* header */
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+}
+#logo{
+    float: left;
+    padding-left: 10%;
+    text-align: center;
+    margin: 10px;
+}
+#logo>a{
+    font-size: 2.5em;
+    font-family: "NanumBrush";
+}
+#nav-bar{
+    float: right;
+    padding-top:50px;
+    padding-right:10%;
+}
+
+#nav-bar>ul>li{
+    line-height: 14px;
+    padding:5px;
+    float: left;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: skyblue;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.menu:hover{
+    font-weight: bold;
+}
+/* content */
+#wrap{
+    margin-top: 120px;
+}
+#content-wrap:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* table */
+#table{
+    width: 80%;        
+    margin: 0px auto;    
+    
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+th,td{
+    padding: 5px;
+}
+th{
+    font-size: 1.2em;
+    border-bottom: 2px solid skyblue;
+    border-top: 2px solid skyblue;
+}
+.table-contents{
+    width:50%;
+}
+td:nth-of-type(2){
+    text-align: left;
+}
+/* tr:nth-of-type(2n-1)>td{
+    background-color: #eee;
+}
+tr:nth-of-type(2n-1)>td *{
+    background-color: #eee;
+} */
+/* align center */
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* form */
+.form input[type="text"]{
+    color: #aaa;
+    border-width: 0 2px 2px 0;
+    border-color: skyblue;
+    border-radius: 5px;
+}
+.form input[type="password"]{
+    border-width: 0 2px 2px 0;
+    border-color: skyblue;
+    border-radius: 5px;
+}
+.button{
+    text-align: right;
+}
+ input[type="button"]{
+    color: #fff;
+    font-weight: bold;    
+    background-color: skyblue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+/* footer */
+footer{
+    position: relative;
+    bottom: 0; right: 0; left: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    line-height: 20px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0);
+}
+footer>span{
+    background-color: inherit;
+}
+footer>span>b{
+    background-color: inherit;
+}
+@media screen and (max-width: 768px){
+    header{
+        height: 180px;   
+    }
+    #logo, #nav-bar{
+        float:none;
+        padding: 0px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    #nav-bar>ul>li{
+        display: inline;
+        float: none;
+    }
+
+    #wrap{
+        margin-top: 180px;
+    }
+    #table{
+        width: 100%;   
+    }
+    th{
+        font-size: 1em;
+    }
+    footer{
+        height: 130px;
+    }
+    footer>span{
+        display: block;
+    }
+}
+@media screen and (max-width: 480px){
+    header{
+        height: 240px;
+    }
+    #wrap{
+        margin-top: 240px;
+    }
+    #logo>a{
+        font-size: 2.0em;
+        letter-spacing: 15px;
+    }
+    #nav-bar{
+        padding-top: 0px;
+    }
+    #nav-bar>ul>li{
+        display: block;
+        float: none;
+
+    }
+    .table-contents{
+        width: 20%;
+    }
+    footer{
+        overflow: scroll;
+    }
+    
+}

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <div id="content-wrap">
 	<div id="table">
 		<table>
@@ -12,7 +11,7 @@
 				<th>조 회</th>
 			</tr>
 			<%
-				for (int i = 10; i > 0; i--) {
+				for (int i = 15; i > 0; i--) {
 			%>
 			<tr>
 				<td><%=i%></td>
@@ -37,11 +36,7 @@
 		</table>
 		<div class="button">
 			<input type="button" value="글쓰기"
-				onclick="location.href = 'login/login.jsp'">
+				onclick="location.href = 'board/write.jsp'">
 		</div>
 	</div>
-
-	<%-- footer --%>
-	<%@ include file="footer.jsp"%>
-	<%-- footer end. --%>
 </div>

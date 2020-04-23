@@ -37,7 +37,7 @@
                         <th>작성일</th>
                         <th>조 회</th>
                     </tr>
-                    <%for(int i=20;i>0;i--){ %>
+                    <%for(int i=10;i>0;i--){ %>
                     <tr>
                         <td><%=i %></td>
                         <td class ="table-contents"><a href="board/list.jsp">게시판 글입니다 <%=i %></a></td>
