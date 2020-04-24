@@ -13,6 +13,11 @@
 <body>
     <div id="wrap">
     	<%-- header --%>
+    	<%
+    	String name= null;
+    	name=(String)session.getAttribute("name");
+    	if(name.equals("홍길동")){
+    	%>
 		<%@ include file="/layout/header.jsp" %>
         <%-- header end --%>
         <%-- content-wrap --%>

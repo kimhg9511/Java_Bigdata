@@ -11,7 +11,6 @@ $('input[type="text"]').on('focus',function(){
 $('#login').on('click',function(){
     var id = $('#uid');
     var pw = $('#upw');
-
     if(id.val().length === 0 || id.val() === id[0].defaultValue){
         alert("아이디는 필수 입력 입니다.")
         id.focus();
@@ -19,6 +18,6 @@ $('#login').on('click',function(){
         alert("비밀번호는 필수 입력 입니다.")
         pw.focus();
     } else{
-        location.href = '../index1.jsp';
+    	$('#loginform').submit();
     }
 })

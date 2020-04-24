@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +27,7 @@ textarea {
 <body>
 	<h1>form data submit</h1>
 	<hr>
-	<form action="/helloJSP/FormEx" method="POST">
+	<form action="formex.jsp" method="POST">
 		<span>Name : </span><input type="text" name="name" size="10"><br>
 		<span>ID : </span><input type="text" name="id" size="10"><br>
 		<span>Password : </span><input type="text" name="password" size="10"><br>
