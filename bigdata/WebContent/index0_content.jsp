@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+String nick = (String)session.getAttribute("nick");
+%>
 <!DOCTYPE html>
 <div id="content-wrap">
 	<div id="table">
@@ -36,8 +39,19 @@
 			</tr>
 		</table>
 		<div class="button">
+<%if(nick == null){%>
 			<input type="button" value="글쓰기"
-				onclick="location.href = '/bigdata/login/login.jsp'">
+				onclick="writecheck()">
+<%}else{ %>
+			<input type="button" value="글쓰기"
+				onclick="location.href = '/bigdata/board/write.jsp'">
+<%} %>
 		</div>
 	</div>
 </div>
+<script>
+function writecheck(){
+	alert("글쓰기 권한이 없습니다.")
+	location.href = '/bigdata/login/login.jsp'	
+}
+</script>

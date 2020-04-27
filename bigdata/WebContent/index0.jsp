@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <%-- head --%>
@@ -9,16 +10,13 @@
     <title>게시판</title>
 </head>
 <%@ include file="/layout/css.jsp" %>
+
 <%-- head end --%>
 <body>
     <div id="wrap">
     	<%-- header --%>
-    	<%
-    	String name= null;
-    	name=(String)session.getAttribute("name");
-    	if(name.equals("홍길동")){
-    	%>
-		<%@ include file="/layout/header.jsp" %>
+		<%-- <%@ include file="/layout/header.jsp" %> --%>
+		<jsp:include page="/layout/header.jsp"></jsp:include>
         <%-- header end --%>
         <%-- content-wrap --%>
 		<%@ include file="/index0_content.jsp" %> 

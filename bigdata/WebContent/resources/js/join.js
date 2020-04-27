@@ -29,7 +29,7 @@ $('#join').on('click',function(){
         }
     });
     if(exit)return;
-    location.href = '../login/login.jsp';
+    document.form.submit();
 })
 $('#uid').on('blur',function(){
     if(!this.value.match(regexrid)){

@@ -11,7 +11,7 @@
 	<h2>제 목</h2>
 	<input id="btitle" type="text" value="제목 기본값"><br>
 	<h2>내 용</h2>
-	<textarea name="" id="bcontent" cols="30" rows="20">내용 기본값</textarea>
+	<textarea name="" id="bcontent" cols="30" rows="20" placeholder="내용 기본값"></textarea>
 	<br>
 	<div class="tail">
 	<h2>비밀번호</h2>
@@ -20,6 +20,6 @@
 	<div class="button">
 		<input type="button" id="update" value="수정"> <input type="button"
 			id="reset" value="다시 수정"> <input type="button" value="뒤로"
-			onclick="location.href='../index1.jsp'">
+			onclick="location.href='../index0.jsp'">
 	</div>
 </div>

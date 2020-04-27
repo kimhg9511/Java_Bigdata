@@ -20,5 +20,5 @@
 </div>
 <div class="button">
 	<input type="button" id="regist" value="등록"> <input
-		type="button" value="뒤로" onclick="location.href='../index1.jsp'">
+		type="button" value="뒤로" onclick="location.href='../index0.jsp'">
 </div>

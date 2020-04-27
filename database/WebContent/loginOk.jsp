@@ -4,15 +4,10 @@
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
-</head>
-<body>
 <%
+//id: asdf pw:1234
+String id=request.getParameter("id");
+String pw=request.getParameter("pw");
 Connection conn = null;
 PreparedStatement pstmt = null;
 ResultSet rs = null;
@@ -20,9 +15,7 @@ String driver = "com.mysql.cj.jdbc.Driver";
 String url = "jdbc:mysql://localhost:3306/bigdata?characterEncoding=UTF-8&serverTimezone=UTC";
 String uid = "root";
 String password = "1234";
-String sql = "select nickname from members where id=? and password=?";
-String id = request.getParameter("uid");
-String pw = request.getParameter("upw");
+String sql = "select name from member where id=? and pw=?";
 try{
 	Class.forName(driver);
 	conn = DriverManager.getConnection(url, uid, password);
@@ -31,17 +24,12 @@ try{
 	pstmt.setString(2, pw);
 	rs = pstmt.executeQuery();
 	if(rs.next()){
-		String nick = rs.getString("nickname");
+		String name = rs.getString("name");
 		session.setAttribute("id", id);
-		session.setAttribute("nick", nick);		
-		response.sendRedirect("/bigdata/index0.jsp");
+		session.setAttribute("name", name);		
+		response.sendRedirect("memberData.jsp");
 	}else{
-%>
-<script>
-	alert("회원정보가 일치하지 않습니다.");
-	location.href = "/bigdata/login/login.jsp";
-</script>
-<%
+		response.sendRedirect("login.jsp");
 	}
 }catch(Exception e){
 	out.println(e.getMessage());	
@@ -51,5 +39,3 @@ try{
 	if(conn != null) conn.close();
 }
 %>
-</body>
-</html>

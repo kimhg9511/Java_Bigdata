@@ -13,7 +13,7 @@
 <body>
     <div id="wrap">
     	<%-- header --%>
-		<%@ include file="/layout/header2.jsp" %>
+		<%@ include file="/layout/header.jsp" %>
         <%-- header end --%>
         <%-- content-wrap --%>
 		<%@ include file="list_content.jsp" %> 
