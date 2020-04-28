@@ -20,9 +20,34 @@
     <!-- web application will be reloaded.                                   -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
-
+	
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
     <Manager pathname="" />
     -->
+    
+    
+    
+<Resource 
+auth="Container"
+driverClassName="com.mysql.cj.jdbc.Driver"
+maxTotal="50"
+maxWaitMillis="1000"
+name="jdbc/Mysql/sakila"
+username="root"
+password="1234"
+url="jdbc:mysql://localhost:3306/sakila?characterEncoding=UTF-8&amp;serverTimezone=UTC"
+type="javax.sql.DataSource"
+/>
+<Resource 
+auth="Container"
+driverClassName="com.mysql.cj.jdbc.Driver"
+maxTotal="50"
+maxWaitMillis="1000"
+name="jdbc/Mysql/bigdata"
+username="root"
+password="1234"
+url="jdbc:mysql://localhost:3306/bigdata?characterEncoding=UTF-8&amp;serverTimezone=UTC"
+type="javax.sql.DataSource"
+/>
 </Context>
