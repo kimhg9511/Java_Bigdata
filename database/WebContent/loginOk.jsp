@@ -8,6 +8,7 @@
 //id: asdf pw:1234
 String id=request.getParameter("id");
 String pw=request.getParameter("pw");
+
 Connection conn = null;
 PreparedStatement pstmt = null;
 ResultSet rs = null;
@@ -16,6 +17,7 @@ String url = "jdbc:mysql://localhost:3306/bigdata?characterEncoding=UTF-8&server
 String uid = "root";
 String password = "1234";
 String sql = "select name from member where id=? and pw=?";
+
 try{
 	Class.forName(driver);
 	conn = DriverManager.getConnection(url, uid, password);

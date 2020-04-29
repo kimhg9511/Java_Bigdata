@@ -21,6 +21,14 @@ public class MemberDto {
 		this.address = address;
 		this.regdate = regdate;
 	}
+	
+	public MemberDto(String pw, String name, String email, String address) {
+		super();
+		this.pw = pw;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+	}
 
 	public String getId() {
 		return id;

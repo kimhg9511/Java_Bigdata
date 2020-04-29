@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Actor Table</h1>
+<h1>Member Table</h1>
 <%if(name != null){ %>
 <%=name %>님
 <%} %>

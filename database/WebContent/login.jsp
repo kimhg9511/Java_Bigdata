@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="loginOk.jsp" method="POST">
+	<form action="/database/LoginOk" method="POST">
 		ID : <input type="text" name="id"><br> 
 		PW : <input type="password" name="pw"><br> 
 		<input type="submit" value="로그인">

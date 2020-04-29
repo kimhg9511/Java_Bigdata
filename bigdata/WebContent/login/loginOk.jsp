@@ -1,4 +1,5 @@
-<%@page import="bigdata.MembersDao"%>
+<%@page import="com.bigdata.dto.MembersDto"%>
+<%@page import="com.bigdata.dao.MembersDao"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -14,11 +15,11 @@
 </head>
 <body>
 <%
-String id = request.getParameter("uid");
-String pw = request.getParameter("upw");
+String id = request.getParameter("id");
+String pw = request.getParameter("password");
 MembersDao dao = MembersDao.getInstance();
-String[] name = dao.membersLogin(id, pw);
-if(name ==null){
+MembersDto member = dao.login(id, pw);
+if(member == null){
 %>
 <script>
 	alert("회원정보가 일치하지 않습니다.");
@@ -26,10 +27,14 @@ if(name ==null){
 </script>
 <%
 }else{
-	session.setAttribute("name", name[0]);
-	session.setAttribute("nick", name[1]);
-	session.setAttribute("userId", id);
-	response.sendRedirect("/bigdata/index0.jsp");
+	session.setAttribute("name", member.getName());
+	session.setAttribute("nickname", member.getNickname());
+	session.setAttribute("id", member.getId());
+	if(member.getId().equals("admin")){
+		response.sendRedirect("/bigdata/admin0.jsp");
+	}else{
+		response.sendRedirect("/bigdata/index0.jsp");	
+	}
 }
 %>
 </body>

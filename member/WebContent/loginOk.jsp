@@ -24,6 +24,7 @@ if(login == null){
 <%
 }else{
 	session.setAttribute("name", login);
-	response.sendRedirect("select.jsp");
+	session.setAttribute("id", id);
+	response.sendRedirect("main.jsp");
 }
 %>

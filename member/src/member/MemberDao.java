@@ -14,12 +14,15 @@ import javax.sql.DataSource;
 
 public class MemberDao {
 	//dbcp 사용
-	
 	private static MemberDao instance = new MemberDao();
-	private static String sqlSelect = "SELECT * FROM member limit ?";
+	private static String sqlSelect = "SELECT * FROM "
+			+ "member limit ?";
 	private static String sqlCheck = "SELECT count(id) as cnt FROM member WHERE id=?";
 	private static String sqlInsert = "INSERT INTO member(id,pw,name,email,address) values(?,?,?,?,?)";
 	private static String sqlLogin = "SELECT name FROM member WHERE id=? and pw=?";
+	private static String sqlGetmember = "SELECT * from member where id = ?";
+	private static String sqlUpdate = "UPDATE member SET name=?, email=?, address=? where id=?";
+	private static String sqlDelete = "DELETE FROM member WHERE id=? and pw=?";
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
@@ -111,4 +114,64 @@ public class MemberDao {
 		}
 		return confirm;
 	}
+	
+	public MemberDto getMember(String id) {
+		MemberDto member = null;
+		try {
+			conn = jdbcutil.getConnection();
+			pstmt = conn.prepareStatement(sqlGetmember);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				String pw = rs.getString("pw");
+				String name = rs.getString("name");
+				String email = rs.getString("email");
+				String address = rs.getString("address");				
+				member = new MemberDto(pw, name, email, address);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(rs, pstmt, conn);
+		}
+		return member;
+	}
+
+	public int memberUpdate(MemberDto dto) {
+		int ri = 0;
+		try {
+			conn = jdbcutil.getConnection();
+			pstmt = conn.prepareStatement(sqlUpdate);
+			pstmt.setString(1, dto.getName());
+			pstmt.setString(2, dto.getEmail());
+			pstmt.setString(3, dto.getAddress());
+			pstmt.setString(4, dto.getId());
+			ri = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(pstmt, conn);
+		}
+		return ri;
+	}
+	
+	public int memberDelete(String id, String pw) {
+		int ri = 0;
+		try {
+			conn = jdbcutil.getConnection();
+			pstmt = conn.prepareStatement(sqlDelete);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			ri = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(pstmt, conn);
+		}
+		return ri;
+	}
+	
+	
 }

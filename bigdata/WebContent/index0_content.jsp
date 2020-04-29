@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-String nick = (String)session.getAttribute("nick");
+String nickname = (String)session.getAttribute("nickname");
 %>
 <!DOCTYPE html>
 <div id="content-wrap">
@@ -39,7 +39,7 @@ String nick = (String)session.getAttribute("nick");
 			</tr>
 		</table>
 		<div class="button">
-<%if(nick == null){%>
+<%if(nickname == null){%>
 			<input type="button" value="글쓰기"
 				onclick="writecheck()">
 <%}else{ %>

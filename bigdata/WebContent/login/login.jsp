@@ -14,8 +14,8 @@
     <form action="/bigdata/login/loginOk.jsp" method="post" id="loginform">
         <div class="login form center">
             <h1>로그인</h1>
-            <input type="text" id="uid" name="uid" value="아이디"><br>
-            <input type="text" id="upw" name="upw" value="비밀번호"><br>
+            <input type="text" id="uid" name="id" value="아이디"><br>
+            <input type="text" id="upw" name="password" value="비밀번호"><br>
             <div class="button">
                 <input type="button" id="login" value="로그인">
                 <input type="button" id="join" value="회원가입" onclick="location.href='/bigdata/join/join.jsp'">

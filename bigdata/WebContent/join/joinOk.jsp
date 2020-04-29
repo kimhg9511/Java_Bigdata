@@ -1,16 +1,17 @@
-<%@page import="bigdata.MembersDao"%>
+<%@page import="com.bigdata.dto.MembersDto"%>
+<%@page import="com.bigdata.dao.MembersDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 request.setCharacterEncoding("UTF-8");
 String uid = request.getParameter("uid");
 %>
-<jsp:useBean id="dto" class="bigdata.MembersDto" />
-<jsp:setProperty property="*" name="dto" />
+<jsp:useBean id="member" class="com.bigdata.dto.MembersDto" />
+<jsp:setProperty property="*" name="member" />
 <%
 MembersDao dao = MembersDao.getInstance();
-int exist = dao.checkId(dto.getUid());
-if(exist != 0){
+MembersDto checkId = dao.selectOne(member.getId());
+if(checkId != null){
 %>
 	<script>
 	alert("이미 존재하는 ID입니다.")
@@ -18,8 +19,8 @@ if(exist != 0){
 	</script>
 <%
 }else{
-	exist = dao.membersInsert(dto);
-	if(exist == 0){
+	int isCreate = dao.createMember(member);
+	if(isCreate == 0){
 %>
 <script>
 		alert("회원가입에 실패하였습니다.")
