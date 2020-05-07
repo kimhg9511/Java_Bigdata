@@ -60,3 +60,16 @@ $('#delete').on('click',function(){
         }
     }
 })
+$('#userdelete').on('click',function(){
+    if($('#upw').val().length === 0){
+        alert("비밀번호를 입력하세요.");
+        $('#upw').focus()
+    } else{
+        if(confirm("삭제하시겠습니까?")){
+            document.del_form.submit();
+        }
+    }
+})
+$('#userupdate').on('click',function(){
+	document.form.submit()
+})

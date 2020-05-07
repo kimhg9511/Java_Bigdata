@@ -27,6 +27,7 @@ $('#uid').on('blur',function(){
     }
 })
 $('#uid').on('focus',function(){
+    if(this.c)
     $('#uid').removeClass('wrong');
     console.dir($('#uid'));
     this.value = "";

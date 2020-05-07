@@ -19,7 +19,7 @@ public class MembersDao {
 	private static String selectOne = "SELECT * FROM members WHERE id=?";
 	private static String login = selectOne + " AND password=?";
 	private static String selectAll = "SELECT * FROM members ORDER BY date DESC";
-	private static String updateMember = "UPDATE";
+	private static String updateMember = "UPDATE members SET password=?, nickname=?, name=?, email=? WHERE id=?";
 	private static String deleteMember = "DELETE FROM members WHERE id=? AND password=?";
 	
 	//Connection Objects
@@ -50,7 +50,7 @@ public class MembersDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			jdbcutil.close(rs, pstmt, conn);
+			jdbcutil.close(pstmt, conn);
 		}
 		return isCreate;
 	}
@@ -127,7 +127,41 @@ public class MembersDao {
 		} finally {
 			jdbcutil.close(rs, pstmt, conn);
 		}
-		
 		return members;
+	}
+	
+	public int updateMember(MembersDto member) {
+		int isUpdate = 0;
+		conn = jdbcutil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(updateMember);
+			pstmt.setString(1, member.getPassword());
+			pstmt.setString(2, member.getNickname());
+			pstmt.setString(3, member.getName());
+			pstmt.setString(4, member.getEmail());
+			pstmt.setString(5, member.getId());
+			isUpdate = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(pstmt, conn);
+		}
+		return isUpdate;
+	}
+	
+	public int deleteMember(String id, String password) {
+		int isUpdate = 0;
+		conn = jdbcutil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(deleteMember);
+			pstmt.setString(1, id);
+			pstmt.setString(2, password);
+			isUpdate = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(pstmt, conn);
+		}
+		return isUpdate;
 	}
 }

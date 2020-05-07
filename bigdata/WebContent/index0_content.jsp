@@ -1,7 +1,12 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.bigdata.dto.BoardDto"%>
+<%@page import="com.bigdata.dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 String nickname = (String)session.getAttribute("nickname");
+BoardDao dao = BoardDao.getInstance();
+ArrayList<BoardDto> boards = dao.getBoardAll();
 %>
 <!DOCTYPE html>
 <div id="content-wrap">
@@ -15,15 +20,14 @@ String nickname = (String)session.getAttribute("nickname");
 				<th>조 회</th>
 			</tr>
 			<%
-				for (int i = 15; i > 0; i--) {
+				for (BoardDto board : boards) {
 			%>
 			<tr>
-				<td><%=i%></td>
-				<td class="table-contents"><a href="/bigdata/board/list.jsp">게시판
-						글입니다 <%=i%></a></td>
-				<td>김현겸</td>
-				<td>2020/04/16</td>
-				<td>0</td>
+				<td><%=board.getIdx()%></td>
+				<td class="table-contents"><a href="/bigdata/board/list.jsp?idx=<%=board.getIdx()%>"><%=board.getTitle() %></a></td>
+				<td><%=board.getAuthor() %></td>
+				<td><%=board.getRegdate() %></td>
+				<td><%=board.getHit() %></td>
 			</tr>
 			<%
 				}
