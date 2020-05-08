@@ -1,12 +1,4 @@
-var placeHolders = [...$('input[type="text"]')];
-
-$('input[type="text"]').on('focus',function(){
-    placeHolders.forEach(ph => {
-        if(this.value === ph.value){
-            this.value= "";    
-            this.style.color = "#222";
-        }
-    });
+$('input[type="text"]').on('focus', function(){
     if(this.id === "upw" || this.id === "repw"){
         this.type = "password";
         return;
@@ -24,10 +16,10 @@ $('#regist').on('click',function(){
         alert('내용은 필수 입력입니다.');
         $('#bcontent').focus()
     }else if($('#upw').val().length ===0){
-        alert('비밀번호는 필수 입력입니다.')
-        $('#upw').focus()
+        alert('비밀번호는 필수 입력입니다.');
+        $('#upw').focus();
     }else{
-        location.href = '../index1.jsp';
+        document.form.submit();
     }
 });
 $('#update').on('click',function(){
@@ -44,7 +36,9 @@ $('#update').on('click',function(){
         alert('비밀번호는 필수 입력입니다.')
         $('#upw').focus()
     }else{
-        location.href = 'list.jsp';
+    	if(confirm("수정하시겠습니까?")){
+    		document.form.submit();
+    	}
     }
 });
 $('#reset').on('click',function(){
@@ -56,7 +50,7 @@ $('#delete').on('click',function(){
         $('#upw').focus()
     } else{
         if(confirm("삭제하시겠습니까?")){
-            location.href = '../index1.jsp'
+            document.form.submit();
         }
     }
 })

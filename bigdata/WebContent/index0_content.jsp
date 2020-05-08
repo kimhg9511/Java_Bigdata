@@ -20,10 +20,11 @@ ArrayList<BoardDto> boards = dao.getBoardAll();
 				<th>조 회</th>
 			</tr>
 			<%
+				int cnt = boards.size();
 				for (BoardDto board : boards) {
 			%>
 			<tr>
-				<td><%=board.getIdx()%></td>
+				<td><%=cnt--%></td>
 				<td class="table-contents"><a href="/bigdata/board/list.jsp?idx=<%=board.getIdx()%>"><%=board.getTitle() %></a></td>
 				<td><%=board.getAuthor() %></td>
 				<td><%=board.getRegdate() %></td>
@@ -43,13 +44,13 @@ ArrayList<BoardDto> boards = dao.getBoardAll();
 			</tr>
 		</table>
 		<div class="button">
-<%if(nickname == null){%>
+<%-- <%if(nickname == null){%>
 			<input type="button" value="글쓰기"
 				onclick="writecheck()">
-<%}else{ %>
+<%}else{ %> --%>
 			<input type="button" value="글쓰기"
 				onclick="location.href = '/bigdata/board/write.jsp'">
-<%} %>
+<%-- <%} %> --%>
 		</div>
 	</div>
 </div>

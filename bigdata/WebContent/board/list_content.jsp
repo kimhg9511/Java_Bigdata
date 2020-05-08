@@ -38,8 +38,8 @@ int hit = dao.increaseHit(idx,board);
 	<div class="button tail">
 		<input type="button" value="목록"
 			onclick="location.href='../index0.jsp'"> <input type="button"
-			value="수정" onclick="location.href='update.jsp'"> <input
-			type="button" value="답변" onclick="location.href='update.jsp'">
-		<input type="button" value="삭제" onclick="location.href='delete.jsp'">
+			value="수정" onclick="location.href='update.jsp?idx=<%=idx %>'"> 
+		<input type="button" value="답변" onclick="location.href='reply.jsp?idx=<%=idx%>'">
+		<input type="button" value="삭제" onclick="location.href='delete.jsp?idx=<%=idx%>'">
 	</div>
 </div>
