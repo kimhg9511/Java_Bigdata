@@ -1,0 +1,31 @@
+#board-wrap {
+    background-color: white;
+    width: 100%;
+    line-height: 25px;
+    padding: 20px;
+}
+
+table.pos {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid steelblue;
+    border-bottom: 2px solid steelblue;
+    border-collapse: collapse;
+
+}
+
+th, td { 
+    border-bottom: 1px solid steelblue;
+    padding: 10px;
+}
+
+td.readnum {
+   text-align: right;
+}
+
+.btnwrap {
+    padding: 10px;
+    background-color: rgb(235, 233, 233);
+    text-align: center;
+}

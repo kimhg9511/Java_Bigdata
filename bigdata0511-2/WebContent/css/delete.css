@@ -1,0 +1,27 @@
+#board-wrap {
+    background-color: white;
+    width: 100%;
+    line-height: 25px;
+    padding: 20px;
+}
+
+input  {
+    width: 50%;
+}
+
+table.pos {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+
+}
+
+table.pos tr:first-child{
+    background-color: thistle;
+}
+
+.btnwrap {
+    padding: 10px;
+    background-color: rgb(235, 233, 233);
+    text-align: center;
+}

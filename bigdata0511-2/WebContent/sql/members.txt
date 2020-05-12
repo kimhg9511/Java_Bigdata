@@ -1,0 +1,11 @@
+CREATE TABLE `members` (
+  `idx` int NOT NULL AUTO_INCREMENT,
+  `id` varchar(45) NOT NULL,
+  `pw` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `nickname` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `regdate` varchar(45) NOT NULL DEFAULT 'now',
+  PRIMARY KEY (`idx`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

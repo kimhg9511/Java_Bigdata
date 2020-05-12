@@ -1,0 +1,31 @@
+#join-wrap {
+    background-color: white;
+    width: 100%;
+    line-height: 25px;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+}
+
+div.pos {
+    margin: 15px 0;
+}
+
+.hr {
+    background-color: thistle;
+    height: 1px;
+}
+
+span.info {
+    line-height: 1px;
+    font-size: 10px;
+    color: blue;
+}
+
+.btnwrap {
+    padding: 10px;
+    background-color: rgb(235, 233, 233);
+    text-align: right;
+}

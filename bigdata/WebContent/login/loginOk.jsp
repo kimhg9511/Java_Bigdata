@@ -31,9 +31,9 @@ if(member == null){
 	session.setAttribute("nickname", member.getNickname());
 	session.setAttribute("id", member.getId());
 	if(member.getId().equals("admin")){
-		response.sendRedirect("/bigdata/admin0.jsp");
+		response.sendRedirect("/bigdata/admin.do");
 	}else{
-		response.sendRedirect("/bigdata/index0.jsp");	
+		response.sendRedirect("/bigdata/index.do");	
 	}
 }
 %>

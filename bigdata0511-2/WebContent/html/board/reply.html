@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>/board/write.html</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="http://thedata.kr/css/cssans.min.css">
+    <link rel="stylesheet" href="../../css/reply.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <a class="logo" href="../index0.html">
+                <b class="cssans:d"></b>
+                <b class="cssans:a"></b>
+                <b class="cssans:t"></b>
+                <b class="cssans:a"></b>
+            </a>
+            <nav>
+                <ul class="nav-items">
+                    <li><a href="../login/login.html">Login</a></li>
+                    <li> | </li>
+                    <li><a href="../join/join.html">회원가입</a></li>
+                    <li> | </li>
+                    <li><a href="../board/list.html">게시판</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content-wrap">
+            <h1 class="content-title">글 답변하기</h1>
+            <div id="board-wrap">
+                <form action="#" method="post">
+                    <table class="pos">
+                        <tr>
+                            <td>작성자</td>
+                            <td><input type="text" name="bname" id="bname" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>E-Mail</td>
+                            <td><input type="text" name="bemail" id="bemail" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>홈페이지</td>
+                            <td><input type="text" name="bhomepage" id="bhomepage" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>제목</td>
+                            <td><input type="text" name="btitle" id="btitle" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td><textarea name="bcontent" id="bcontent" cols="30" rows="10"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호</td>
+                            <td><input type="text" name="bpw" id="bpw" value=""></td>
+                        </tr>
+                    </table>
+
+                    <div class="btnwrap">
+                        <div class="btn" id="replyBtn">답변 완료</div>
+                        <div class="btn white" id="resetBtn">다시 답변</div>
+                        <a href="javascript:history.back();" class="btn white"">뒤로</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <ul class=" footer">
+                    <li>이용약관 | 개인정보취급방침</li>
+                    <li>서울특별시 구로구 디지털로 306 (구로동, 대륭포스트타워 2차 212호,218호,219호) | t. 02-2082-1688 | F. 031-000-0000
+                    </li>
+                    <li>Copyright ⓒ THEJOEUN ACADEMY Corp.. All Rights Reserved.</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../js/board.js"></script>
+</body>
+
+</html>

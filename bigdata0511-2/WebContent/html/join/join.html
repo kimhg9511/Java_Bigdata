@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<body lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>/join/join.html</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="http://thedata.kr/css/cssans.min.css">
+    <link rel="stylesheet" href="../../css/join.css">
+    
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <a class="logo" href="#home">
+                <b class="cssans:d"></b>
+                <b class="cssans:a"></b>
+                <b class="cssans:t"></b>
+                <b class="cssans:a"></b>
+            </a>
+            <nav>
+                <ul class="nav-items">
+                    <li><a href="../login/login.html">Login</a></li>
+                    <li> | </li>
+                    <li><a href="../join/join.html">회원가입</a></li>
+                    <li> | </li>
+                    <li><a href="../board/list.html">게시판</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content-wrap">
+            <h1 class="content-title">회원가입</h1>
+            <div id="join-wrap">
+                <form action="../login/login.html" method="post">
+                    <div class="pos">
+                        <strong>사이트 이용정보 입력</strong>
+                        <input type="text" name="uid" id="uid" value="" placeholder="아이디"><br>
+                        <span class="info">영문자, 숫자, _ 만 입력 가능. 최소 3자이상 입력하세요.</span>
+                        <input type="password" name="upw" id="upw" placeholder="비밀번호"><br>
+                        <input type="password" name="upw" id="repw" placeholder="비밀번호확인">
+                    </div>
+                    <div class="hr">&nbsp;</div>
+                    <sp class="pos">
+                        <strong>개인정보 입력</strong>
+                        <input type="text" name="uname" id="uname" value="" placeholder="이름"><br>
+                        <span class="info">공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상)</span><br>
+                        <span class="info">닉네임을 바꾸시면 앞으로 60일 이내에는 변경 할 수 없습니다.</span><br>
+                        <input type="text" name="unickname" id="unickname" placeholder="닉네임"><br>
+                        <input type="text" name="uemail" id="uemail" placeholder="E-mail">
+                    </div>
+                    <div class="btnwrap">
+                        <a href="javascript:history.back();" class="btn white">취소</a> 
+                        <div class="btn" id="procBtn">로그인</div>
+                    </div>
+                </form>
+            </div>
+
+        <footer>
+            <div>
+                <ul class="footer">
+                    <li>이용약관 | 개인정보취급방침</li>
+                    <li>서울특별시 구로구 디지털로 306 (구로동, 대륭포스트타워 2차 212호,218호,219호) | t. 02-2082-1688 | F. 031-000-0000</li>
+                    <li>Copyright ⓒ THEJOEUN ACADEMY Corp.. All Rights Reserved.</li>
+                </ul>
+            </div>
+        </footer>
+    </input>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../js/join.js"></script>
+</body>
+
+</div>

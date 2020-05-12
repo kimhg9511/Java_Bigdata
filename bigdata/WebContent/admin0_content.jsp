@@ -5,8 +5,7 @@
 	pageEncoding="UTF-8"%>
 <%
 String nickname = (String)session.getAttribute("nickname");
-MembersDao dao = MembersDao.getInstance();
-ArrayList<MembersDto> members = dao.selectAll();
+ArrayList<MembersDto> members = (ArrayList<MembersDto>)request.getAttribute("members");
 %>
 <!DOCTYPE html>
 <div id="content-wrap">

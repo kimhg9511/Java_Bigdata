@@ -3,10 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-int idx = Integer.parseInt(request.getParameter("idx"));
-BoardDao dao = BoardDao.getInstance();
-BoardDto board = dao.getBoardOne(idx);
-int hit = dao.increaseHit(idx,board);
+String idx = request.getParameter("idx");
+BoardDto board = (BoardDto)request.getAttribute("board");
+int hit = (int)request.getAttribute("hit");
 %>
 <h1>글 읽기</h1>
 <div class="view">

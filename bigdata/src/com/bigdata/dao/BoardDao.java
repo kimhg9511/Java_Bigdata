@@ -25,6 +25,11 @@ public class BoardDao {
 	private static String updateGroup = "UPDATE board SET `group`=? where idx=?";
 	private static String replyBoard = "INSERT INTO board(author,email,homepage,title,content,pw,`group`,step,indent) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static String updateStep = "UPDATE board SET step = step + 1 where `group`=? and step > ?";
+	private static String selectPage = "select * from board order by `group` desc, step asc limit ?,?";
+	private static String getCount1 = "select count(*) as cnt from board where ";
+	private static String getCount2 = " like ?";
+	private static String selectSearch1 = "select * from board where ";
+	private static String selectSearch2 = " like ? order by `group` desc, step asc limit ?,?";
 	//Connection Objects
 	private Connection conn;
 	private PreparedStatement pstmt;
@@ -94,6 +99,93 @@ public class BoardDao {
 			jdbcutil.close(rs, pstmt, conn);
 		}
 		return boards;
+	}
+	
+	public ArrayList<BoardDto> getBoardPage(int startNum, int endNum){
+		ArrayList<BoardDto> boards = new ArrayList<BoardDto>();
+		conn = jdbcutil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(selectPage);
+			pstmt.setInt(1, startNum);
+			pstmt.setInt(2, endNum);			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Integer idx = rs.getInt("idx");
+				String author = rs.getString("author");
+				String email = rs.getString("email");
+				String homepage = rs.getString("homepage");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String pw = rs.getString("pw");
+				Integer hit = rs.getInt("hit");
+				String regdate = rs.getString("regdate");
+				Integer group = rs.getInt("group");
+				Integer step = rs.getInt("step");
+				Integer indent = rs.getInt("indent");
+				BoardDto board = new BoardDto(idx, author, email, homepage, title, content, pw, hit, regdate, group, step, indent);
+				boards.add(board);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(rs, pstmt, conn);
+		}
+		return boards;
+	}
+	
+	public ArrayList<BoardDto> getBoardSearch(int startNum, int endNum,String condition, String value){
+		ArrayList<BoardDto> boards = new ArrayList<BoardDto>();
+		String sValue = '%' + value + '%';
+		String selectSearch = selectSearch1 + condition + selectSearch2;
+		conn = jdbcutil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(selectSearch);
+			pstmt.setString(1, sValue);
+			pstmt.setInt(2, startNum);
+			pstmt.setInt(3, endNum);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Integer idx = rs.getInt("idx");
+				String author = rs.getString("author");
+				String email = rs.getString("email");
+				String homepage = rs.getString("homepage");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String pw = rs.getString("pw");
+				Integer hit = rs.getInt("hit");
+				String regdate = rs.getString("regdate");
+				Integer group = rs.getInt("group");
+				Integer step = rs.getInt("step");
+				Integer indent = rs.getInt("indent");
+				BoardDto board = new BoardDto(idx, author, email, homepage, title, content, pw, hit, regdate, group, step, indent);
+				boards.add(board);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(rs, pstmt, conn);
+		}
+		return boards;
+	}
+	
+	public int getCount(String condition, String value) {
+		String sValue = '%' + value + '%';
+		String getCount = getCount1 + condition + getCount2;
+		int cnt = 0;
+		conn = jdbcutil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(getCount);
+			pstmt.setString(1, sValue);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				cnt = rs.getInt("cnt");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			jdbcutil.close(rs, pstmt, conn);
+		}
+		return cnt;
 	}
 	
 	public int getMaxIdx() {

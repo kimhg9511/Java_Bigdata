@@ -3,7 +3,7 @@
 <%
 String idx = request.getParameter("idx");
 %>
-<form action="deleteOk.jsp" method="post" name="form">
+<form action="delete.do" method="post" name="form">
 <input type="hidden" name="idx" value="<%=idx %>">
 <div class="delete center">
 	<h1>작성자의 비밀번호를 입력해주세요</h1>
