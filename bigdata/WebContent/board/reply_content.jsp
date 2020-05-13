@@ -3,16 +3,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-int idx = Integer.parseInt(request.getParameter("idx"));
-BoardDao dao = BoardDao.getInstance();
-BoardDto board = dao.getBoardOne(idx);
-
+int idx = (int)request.getAttribute("idx");
+BoardDto board = (BoardDto)request.getAttribute("board");
 %>
-<form action="replyOk.jsp" method="post" name="form">
+<form action="replyOk.do" method="post" name="form">
 	<div class="write form">
 		<h1>게시판 답변하기</h1>
 		<h2>작성자</h2>
-		<input type="hidden" value="<%=idx%>" name="idx">
+		<input type="hidden" value="<%=idx %>" name="idx">
 		<input id="writer" type="text" name="author"><br>
 		<h2>E-mail</h2>
 		<input id="mail" type="text" name="email"><br>

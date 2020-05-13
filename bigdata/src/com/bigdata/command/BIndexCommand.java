@@ -13,14 +13,15 @@ public class BIndexCommand implements BCommand{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		String sPageList = request.getParameter("page");
-		if(sPageList == null) {
+		if(sPageList == null || sPageList.equals("")) {
 			sPageList = "5";
 		}
-		System.out.println(sPageList);
+//		System.out.println("pageList: " + sPageList);
 		String pageNum = request.getParameter("pagenum");
 		if(pageNum==null) {
 			pageNum = "1";
 		}
+//		System.out.println("pageNum: " + pageNum);
 		int pageList = Integer.parseInt(sPageList);
 		int currentPage = Integer.parseInt(pageNum);
 		int startRow = (currentPage -1)*pageList;
@@ -35,5 +36,6 @@ public class BIndexCommand implements BCommand{
 		request.setAttribute("count", count);
 		request.setAttribute("pageCount", pageCount);
 		request.setAttribute("pageNum", currentPage);
+		request.setAttribute("pageList", pageList);
 	}
 }

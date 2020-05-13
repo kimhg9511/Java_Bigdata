@@ -2,14 +2,10 @@
 <%@page import="com.bigdata.dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-request.setCharacterEncoding("UTF-8");
-%>
 <jsp:useBean id="board" class="com.bigdata.dto.BoardDto" />
 <jsp:setProperty property="*" name="board" />
 <%
-BoardDao dao = BoardDao.getInstance();
-int isInsert = dao.insertBoard(board);
+int isInsert = (int)request.getAttribute("isInsert");
 if (isInsert == 0) {
 %>
 <script>
@@ -17,15 +13,13 @@ if (isInsert == 0) {
 	history.back();
 </script>
 <%
-	} else {
-	int max = dao.getMaxIdx();
-	dao.updateGroup(max);
+} else {
 %>
 <script>
 	alert("글이 등록되었습니다.");
-	location.href = "/bigdata/index0.jsp";
+	location.href = "index.do";
 </script>
 <%
-	}
+}
 %>
 

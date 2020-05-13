@@ -25,7 +25,7 @@ ArrayList<BoardDto> boards = dao.getBoardAll();
 			%>
 			<tr>
 				<td><%=cnt--%></td>
-				<td class="table-contents"><a href="/bigdata/board/list.jsp?idx=<%=board.getIdx()%>"><%=board.getTitle() %></a></td>
+				<td class="table-contents"><a href="list.do?idx=<%=board.getIdx()%>"><%=board.getTitle() %></a></td>
 				<td><%=board.getAuthor() %></td>
 				<td><%=board.getRegdate() %></td>
 				<td><%=board.getHit() %></td>

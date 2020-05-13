@@ -36,9 +36,9 @@ int hit = (int)request.getAttribute("hit");
 	</table>
 	<div class="button tail">
 		<input type="button" value="목록"
-			onclick="location.href='../index0.jsp'"> <input type="button"
-			value="수정" onclick="location.href='update.jsp?idx=<%=idx %>'"> 
-		<input type="button" value="답변" onclick="location.href='reply.jsp?idx=<%=idx%>'">
+			onclick="location.href='index.do'"> <input type="button"
+			value="수정" onclick="location.href='update.do?idx=<%=idx %>'"> 
+		<input type="button" value="답변" onclick="location.href='reply.do?idx=<%=idx%>'">
 		<input type="button" value="삭제" onclick="location.href='delete.jsp?idx=<%=idx%>'">
 	</div>
 </div>

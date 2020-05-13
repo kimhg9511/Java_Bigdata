@@ -3,11 +3,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-int idx = Integer.parseInt(request.getParameter("idx"));
-BoardDao dao = BoardDao.getInstance();
-BoardDto board = dao.getBoardOne(idx);
+int idx = (int)request.getAttribute("idx");
+BoardDto board = (BoardDto)request.getAttribute("board");
 %>
-<form action="updateOk.jsp" method="post" name="form">
+<form action="updateOk.do" method="post" name="form">
 <div class="write form">
 	<h1>게시판 글 수정하기</h1>
 	<input type="hidden" name="idx" value="<%=idx%>"> 
@@ -29,7 +28,7 @@ BoardDto board = dao.getBoardOne(idx);
 	<div class="button">
 		<input type="button" id="update" value="수정"> <input type="button"
 			id="reset" value="다시 수정"> <input type="button" value="뒤로"
-			onclick="location.href='../index0.jsp'">
+			onclick="javascript:history.back()">
 	</div>
 </div>
 </form>

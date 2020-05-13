@@ -2,13 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-request.setCharacterEncoding("UTF-8");
-%>
-<jsp:useBean id="board" class="com.bigdata.dto.BoardDto" />
-<jsp:setProperty property="*" name="board" />
-<%
-BoardDao dao = BoardDao.getInstance();
-int isUpdate = dao.updateBoard(board);
+int idx = (int)request.getAttribute("idx");
+int isUpdate = (int)request.getAttribute("isUpdate");
 if(isUpdate == 0){
 %>
 <script>
@@ -20,7 +15,7 @@ if(isUpdate == 0){
 %>
 <script>
 	alert("글이 수정되었습니다.");
-	location.href = "/bigdata/board/list.jsp?idx=<%=board.getIdx()%>"
+	location.href = "/bigdata/board/list.do?idx=<%=idx%>"
 </script>
 <%
 }

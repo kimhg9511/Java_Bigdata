@@ -2,18 +2,20 @@ package com.bigdata.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.bigdata.dao.BoardDao;
+import com.bigdata.dto.BoardDto;
 
-public class BDeleteCommand implements BCommand{
+public class BReplyCommand implements BCommand {
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int idx = Integer.parseInt(request.getParameter("idx"));
-		String pw = request.getParameter("pw");
 		BoardDao dao = BoardDao.getInstance();
-		int isDelete = dao.deleteBoard(idx, pw);
-		request.setAttribute("isDelete", isDelete);
-		System.out.println(isDelete);
+		BoardDto board = dao.getBoardOne(idx);
+		
+		request.setAttribute("idx", idx);
+		request.setAttribute("board", board);
 	}
+
 }

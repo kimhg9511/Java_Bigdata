@@ -10,9 +10,12 @@ int count = (int) request.getAttribute("count");
 int pageCount = (int) request.getAttribute("pageCount");
 int pageNum = (int) request.getAttribute("pageNum");
 int pageList = (int) request.getAttribute("pageList");
+String search = (String)request.getAttribute("search");
+String isearch = (String)request.getAttribute("isearch");
 %>
 <!DOCTYPE html>
 <div id="content-wrap">
+
 	<div class="boardconfig">
 		<form action="search.do" method="get" name="form" class="form">
 			<div class="search">
@@ -23,7 +26,9 @@ int pageList = (int) request.getAttribute("pageList");
 				<input type="submit" value="검색">
 			</div>
 		</form>
-		<form action="index.do" method="get" name="form2" class="form">
+		<form action="search.do" method="get" name="form2" class="form">
+			<input type="hidden" name="search" value=<%=search %>> <input
+				type="hidden" name="isearch" value=<%=isearch %>>
 			<div class="page">
 				<select id="page" name="page" class="page" onchange="setPageSize()">
 					<option value="" selected></option>
@@ -34,6 +39,7 @@ int pageList = (int) request.getAttribute("pageList");
 			</div>
 		</form>
 	</div>
+
 	<div id="table">
 		<table>
 			<tr>
@@ -44,8 +50,15 @@ int pageList = (int) request.getAttribute("pageList");
 				<th>조 회</th>
 			</tr>
 			<%
-				int cnt = count - pageList * (pageNum - 1);
-			for (BoardDto board : boards) {
+			int cnt = count - pageList*(pageNum-1);
+			if(count==0){
+			%>
+			<tr>
+				<td colspan="5">게시글이 없습니다.</td>
+			</tr>
+			<%
+			} else {
+				for (BoardDto board : boards) {
 			%>
 			<tr>
 				<td><%=cnt--%></td>
@@ -57,13 +70,16 @@ int pageList = (int) request.getAttribute("pageList");
 			</tr>
 			<%
 				}
+			}
 			%>
 			<tr>
 				<th colspan="5">
 					<%
 						for (int i = 1; i <= pageCount; i++) {
-					%> <a href="/bigdata/index.do?pagenum=<%=i%>&page=<%=pageList%>"><%=i%></a> <%
- 	}
+					%> <a
+					href="/bigdata/search.do?pagenum=<%=i %>&search=<%=search%>&isearch=<%=isearch%>&page=<%=pageList%>"><%=i%></a>
+					<%
+ 						}
  %>
 				</th>
 			</tr>

@@ -59,6 +59,40 @@ public class BoardDto {
 		this.indent = indent;
 	}
 	
+	//create constructor
+	public BoardDto(String author, String email, String homepage, String title, String content, String pw) {
+		this.author = author;
+		this.email = email;
+		this.homepage = homepage;
+		this.title = title;
+		this.content = content;
+		this.pw = pw;
+	}
+	
+	//update constructor
+	public BoardDto(Integer idx, String email, String homepage, String title, String content, String pw) {
+		super();
+		this.idx = idx;
+		this.email = email;
+		this.homepage = homepage;
+		this.title = title;
+		this.content = content;
+		this.pw = pw;
+	}
+	
+	//reply constructor
+	public BoardDto(Integer idx, String author, String email, String homepage, String title, String content,
+			String pw) {
+		super();
+		this.idx = idx;
+		this.author = author;
+		this.email = email;
+		this.homepage = homepage;
+		this.title = title;
+		this.content = content;
+		this.pw = pw;
+	}
+	
 	// getter&setter
 	public Integer getIdx() {
 		return idx;
