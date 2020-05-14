@@ -8,19 +8,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.bigdata.command.BAdminCommand;
-import com.bigdata.command.BCommand;
-import com.bigdata.command.BDeleteCommand;
-import com.bigdata.command.BIndexCommand;
-import com.bigdata.command.BListCommand;
-import com.bigdata.command.BReplyCommand;
-import com.bigdata.command.BReplyOkCommand;
-import com.bigdata.command.BSearchCommand;
-import com.bigdata.command.BUpdateCommand;
-import com.bigdata.command.BUpdateOkCommand;
-import com.bigdata.command.BWriteCommand;
+import com.bigdata.command.board.BCommand;
+import com.bigdata.command.board.BDeleteCommand;
+import com.bigdata.command.board.BIndexCommand;
+import com.bigdata.command.board.BListCommand;
+import com.bigdata.command.board.BReplyCommand;
+import com.bigdata.command.board.BReplyOkCommand;
+import com.bigdata.command.board.BSearchCommand;
+import com.bigdata.command.board.BUpdateCommand;
+import com.bigdata.command.board.BUpdateOkCommand;
+import com.bigdata.command.board.BWriteCommand;
 
 
 @WebServlet("*.do")
@@ -60,12 +58,7 @@ public class BoardController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "/pindex.jsp";
 		//admin.do
-		} else if(comm.equals("admin.do")) {
-			command = new BAdminCommand();
-			command.execute(request, response);
-			viewPage = "/admin0.jsp";
-		//search.do
-		} else if(comm.equals("search.do")) {
+		}else if(comm.equals("search.do")) {
 			command = new BSearchCommand();
 			command.execute(request, response);
 			viewPage = "/search.jsp";

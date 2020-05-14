@@ -21,7 +21,7 @@ String nickname = (String)session.getAttribute("nickname");
 			<li><%=nickname %>(<%=name %>)님 환영합니다.</li>
 			<li><a href="/bigdata/login/logout.jsp" class="menu">Logout</a></li>
 			<li><a href="/bigdata/index.do" class="menu">mvc게시판</a></li>
-			<li><a href="/bigdata/admin.do" class="menu">회원정보</a></li>
+			<li><a href="/bigdata/admin.member" class="menu">회원정보</a></li>
 			<li><a href="/bigdata/join/userupdate.jsp" class="menu">회원정보수정</a></li>
 			<li><a href="/bigdata/join/userdelete.jsp" class="menu">회원 탈퇴</a></li>	
 		<%}else{ %>

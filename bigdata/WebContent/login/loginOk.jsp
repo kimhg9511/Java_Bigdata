@@ -31,7 +31,7 @@ if(member == null){
 	session.setAttribute("nickname", member.getNickname());
 	session.setAttribute("id", member.getId());
 	if(member.getId().equals("admin")){
-		response.sendRedirect("/bigdata/admin.do");
+		response.sendRedirect("/bigdata/admin.member");
 	}else{
 		response.sendRedirect("/bigdata/index.do");	
 	}
