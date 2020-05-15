@@ -3,21 +3,12 @@
 <%@page import="com.bigdata.dao.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-String nickname = (String) session.getAttribute("nickname");
-ArrayList<BoardDto> boards = (ArrayList<BoardDto>) request.getAttribute("boards");
-int count = (int) request.getAttribute("count");
-int pageCount = (int) request.getAttribute("pageCount");
-int pageNum = (int) request.getAttribute("pageNum");
-int pageList = (int) request.getAttribute("pageList");
-String search = (String)request.getAttribute("search");
-String isearch = (String)request.getAttribute("isearch");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cnt" value="${count - pageList*(pageNum-1) }" />
 <!DOCTYPE html>
 <div id="content-wrap">
-
 	<div class="boardconfig">
-		<form action="search.do" method="get" name="form" class="form">
+		<form action="search.board" method="get" name="form" class="form">
 			<div class="search">
 				<select name="search" class="search">
 					<option value="title">제목</option>
@@ -26,9 +17,9 @@ String isearch = (String)request.getAttribute("isearch");
 				<input type="submit" value="검색">
 			</div>
 		</form>
-		<form action="search.do" method="get" name="form2" class="form">
-			<input type="hidden" name="search" value=<%=search %>> <input
-				type="hidden" name="isearch" value=<%=isearch %>>
+		<form action="search.board" method="get" name="form2" class="form">
+			<input type="hidden" name="search" value=${search }> <input
+				type="hidden" name="isearch" value=${isearch }>
 			<div class="page">
 				<select id="page" name="page" class="page" onchange="setPageSize()">
 					<option value="" selected></option>
@@ -39,7 +30,6 @@ String isearch = (String)request.getAttribute("isearch");
 			</div>
 		</form>
 	</div>
-
 	<div id="table">
 		<table>
 			<tr>
@@ -49,39 +39,39 @@ String isearch = (String)request.getAttribute("isearch");
 				<th>작성일</th>
 				<th>조 회</th>
 			</tr>
-			<%
-			int cnt = count - pageList*(pageNum-1);
-			if(count==0){
-			%>
+			<c:choose>
+				<c:when test="${count==0 }">
+					<tr>
+						<td colspan="5">게시글이 없습니다.</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${boards }" var="board">
+						<tr>
+							<td>${cnt }</td>
+							<td class="table-contents"><c:url var="list"
+									value="/bigdata/board/list.">
+									<c:param name="idx" value="${idx }"></c:param>
+								</c:url> <a href="${list}">${board.title }</a></td>
+							<td>${board.author }</td>
+							<td>${board.regdate }</td>
+							<td>${board.hit }</td>
+						</tr>
+						<c:set var="cnt" value="${cnt-1 }"></c:set>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
 			<tr>
-				<td colspan="5">게시글이 없습니다.</td>
-			</tr>
-			<%
-			} else {
-				for (BoardDto board : boards) {
-			%>
-			<tr>
-				<td><%=cnt--%></td>
-				<td class="table-contents"><a
-					href="/bigdata/board/list.do?idx=<%=board.getIdx()%>"><%=board.getTitle()%></a></td>
-				<td><%=board.getAuthor()%></td>
-				<td><%=board.getRegdate()%></td>
-				<td><%=board.getHit()%></td>
-			</tr>
-			<%
-				}
-			}
-			%>
-			<tr>
-				<th colspan="5">
-					<%
-						for (int i = 1; i <= pageCount; i++) {
-					%> <a
-					href="/bigdata/search.do?pagenum=<%=i %>&search=<%=search%>&isearch=<%=isearch%>&page=<%=pageList%>"><%=i%></a>
-					<%
- 						}
- %>
-				</th>
+				<th colspan="5"><c:forEach var="i" begin="1"
+						end="${pageCount }" step="1">
+						<c:url var="page" value="/bigdata/search.board">
+							<c:param name="pagenum" value="${i }"></c:param>
+							<c:param name="page" value="${pageList }"></c:param>
+							<c:param name="search" value="${search}"></c:param>
+							<c:param name="isearch" value="${isearch }"></c:param>		
+						</c:url>
+						<a href="${page}">${i }</a>
+					</c:forEach></th>
 			</tr>
 		</table>
 		<div class="button">

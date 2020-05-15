@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/bigdata/resources/css/login.css">
 </head>
 <body>
-    <form action="/bigdata/login/loginOk.jsp" method="post" id="loginform">
+    <form action="/bigdata/login/login.member" method="post" id="loginform">
         <div class="login form center">
             <h1>로그인</h1>
             <input type="text" id="uid" name="id" value="아이디"><br>

@@ -16,7 +16,7 @@
 		<%@ include file="/layout/header.jsp" %>
         <%-- header end --%>
         <%-- content-wrap --%>
-		<%@ include file="delete_content.jsp" %> 
+		<%@ include file="userdelete_content.jsp" %> 
         <%-- content-wrap end --%>
     </div>
     <%-- wrap end --%>

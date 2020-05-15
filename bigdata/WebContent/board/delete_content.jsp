@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-String idx = request.getParameter("idx");
-%>
-<form action="delete.do" method="post" name="form">
-<input type="hidden" name="idx" value="<%=idx %>">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<form action="delete.board" method="post" name="form">
+<input type="text" name="idx" value="${param.idx }">
 <div class="delete center">
 	<h1>작성자의 비밀번호를 입력해주세요</h1>
 	<input id="upw" type="password" name="pw">

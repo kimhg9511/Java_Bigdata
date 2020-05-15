@@ -23,7 +23,7 @@ public class BReplyOkCommand implements BCommand {
 		BoardDao dao = BoardDao.getInstance();
 		int isInsert = dao.replyBoard(board);
 		
-		request.setAttribute("isInsert", isInsert);
+		request.setAttribute("isReply", isInsert);
 	}
 
 }

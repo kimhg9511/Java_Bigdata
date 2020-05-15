@@ -15,7 +15,5 @@ public class BUpdateCommand implements BCommand{
 		BoardDto board = dao.getBoardOne(idx);
 		
 		request.setAttribute("board", board);
-		request.setAttribute("idx", idx);
 	}
-
 }

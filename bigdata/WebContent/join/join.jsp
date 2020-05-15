@@ -14,7 +14,7 @@
 <body>
 	<div class="input form center">
 		<h1>회원 가입</h1>
-		<form action="/bigdata/join/joinOk.jsp" method="POST" name="form">
+		<form action="join.member" method="POST" name="form">
 			<div class="idpass">
 				<h2>사이트 이용정보 입력</h2>
 				<span>아이디</span>
@@ -37,12 +37,12 @@
 				<input type="text" name="email" id="email" class="member" placeholder="email"><br>
 			</div>
 			<div class="button">
-				<input type="submit" id="join" value="회원가입"> 
+				<input type="button" id="join" value="회원가입"> 
 				<input type="button" value="취소" onclick="javascript:history.back();">
 			</div>
 		</form>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<!-- 	<script src="/bigdata/resources/js/join2.js"></script> -->
+	<script src="/bigdata/resources/js/join.js"></script>
 </body>
 </html>

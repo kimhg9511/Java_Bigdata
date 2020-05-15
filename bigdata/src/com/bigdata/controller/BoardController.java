@@ -21,7 +21,7 @@ import com.bigdata.command.board.BUpdateOkCommand;
 import com.bigdata.command.board.BWriteCommand;
 
 
-@WebServlet("*.do")
+@WebServlet("*.board")
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -52,48 +52,48 @@ public class BoardController extends HttpServlet {
 		System.out.println(comm);
 		String viewPage = null;
 		BCommand command = null;
-		//index.do
-		if(comm.equals("index.do")) {
+		//index.board
+		if(comm.equals("index.board") || comm.equals("bigdata")) {
 			command = new BIndexCommand();
 			command.execute(request, response);
-			viewPage = "/pindex.jsp";
-		//admin.do
-		}else if(comm.equals("search.do")) {
+			viewPage = "/index.jsp";
+		//admin.board
+		}else if(comm.equals("search.board")) {
 			command = new BSearchCommand();
 			command.execute(request, response);
 			viewPage = "/search.jsp";
-		//write.do
-		} else if(comm.equals("write.do")) {
+		//write.board
+		} else if(comm.equals("write.board")) {
 			command = new BWriteCommand();
 			command.execute(request, response);
 			viewPage = "/board/writeOk.jsp";
-		//list.do
-		} else if(comm.equals("list.do")) {
+		//list.board
+		} else if(comm.equals("list.board")) {
 			command = new BListCommand();
 			command.execute(request, response);
 			viewPage = "/board/list.jsp";
-		//reply.do
-		} else if(comm.equals("reply.do")) {
+		//reply.board
+		} else if(comm.equals("reply.board")) {
 			command = new BReplyCommand();
 			command.execute(request, response);
 			viewPage = "/board/reply.jsp";
-		//replyOk.do
-		} else if(comm.equals("replyOk.do")) {
+		//replyOk.board
+		} else if(comm.equals("replyOk.board")) {
 			command = new BReplyOkCommand();
 			command.execute(request, response);
 			viewPage = "/board/replyOk.jsp";
-		//update.do
-		} else if(comm.equals("update.do")) {
+		//update.board
+		} else if(comm.equals("update.board")) {
 			command = new BUpdateCommand();
 			command.execute(request, response);
 			viewPage = "/board/update.jsp";
-		//updateOk.do
-		} else if(comm.equals("updateOk.do")) {
+		//updateOk.board
+		} else if(comm.equals("updateOk.board")) {
 			command = new BUpdateOkCommand();
 			command.execute(request, response);
 			viewPage = "/board/updateOk.jsp";
-		//delete.do
-		} else if(comm.equals("delete.do")) {
+		//delete.board
+		} else if(comm.equals("delete.board")) {
 			command = new BDeleteCommand();
 			command.execute(request, response);	
 			viewPage = "/board/deleteOk.jsp";

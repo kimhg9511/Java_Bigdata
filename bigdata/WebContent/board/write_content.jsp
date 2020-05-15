@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<form action="write.do" method="post" name="form">
+<form action="write.board" method="post" name="form">
 	<div class="write form">
 		<h1>게시판 글쓰기</h1>
 		<h2>작성자</h2>

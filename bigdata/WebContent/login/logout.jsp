@@ -5,5 +5,5 @@ session.invalidate();
 %>
 <script>
 alert("로그아웃 되었습니다.")
-location.href ="/bigdata/index0.jsp";
+location.href ="/bigdata/index.board";
 </script>

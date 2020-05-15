@@ -15,6 +15,7 @@ import com.bigdata.command.member.MDeleteCommand;
 import com.bigdata.command.member.MJoinCommand;
 import com.bigdata.command.member.MLoginCommand;
 import com.bigdata.command.member.MUpdateCommand;
+import com.bigdata.command.member.MUpdateOkCommand;
 
 /**
  * Servlet implementation class MemberController
@@ -57,32 +58,40 @@ public class MemberController extends HttpServlet {
 		System.out.println(comm);
 		String viewPage = null;
 		MCommand command = null;
-		
-		// uri 
-		if(comm.equals("admin.member")) {
+		// uri
+		// userlist
+		if(comm.equals("list.member")) {
 			command = new MAdminCommand();
-			 command.execute(request, response);
-			 viewPage = "/admin0.jsp";
+			command.execute(request, response);
+			viewPage = "/member.jsp";
+		// login
 		} else if(comm.equals("login.member")) {
 			command = new MLoginCommand();
-			 command.execute(request, response);
-			 viewPage = "/login/loginOk.jsp";
+			command.execute(request, response);
+			viewPage = "/login/loginOk.jsp";
+		// join
 		} else if(comm.equals("join.member")) {
 			command = new MJoinCommand();
-			 command.execute(request, response);
-			 viewPage = "/join/JoinOk.jsp";
+			command.execute(request, response);
+			viewPage = "/join/joinOk.jsp";
+		// update
 		} else if(comm.equals("update.member")) {
 			command = new MUpdateCommand();
-			 command.execute(request, response);
-			 viewPage = "/join/userupdateOk.jsp";
+			command.execute(request, response);
+			viewPage = "/join/userupdate.jsp";
+		// updateOk
+		} else if(comm.equals("updateOk.member")) {
+			command = new MUpdateOkCommand();
+			command.execute(request, response);
+			viewPage = "/join/userupdateOk.jsp";
+		// delete
 		} else if(comm.equals("delete.member")) {
 			command = new MDeleteCommand();
-			 command.execute(request, response);
-			 viewPage = "/join/userdeleteOk.jsp";
+			command.execute(request, response);
+			viewPage = "/join/userdeleteOk.jsp";
 		}
-
 		if(viewPage == null) {
-			viewPage = "/index.do";
+			viewPage = "index.board";
 		}
 		request.setAttribute("comm", comm);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
